@@ -63,7 +63,7 @@
 
     /* ─── Nav ──────────────────────────────────────────────────── */
     nav {
-      transition: transform .3s ease;
+      display: none;
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       padding: 20px 24px;
       display: flex; justify-content: space-between; align-items: center;
@@ -544,14 +544,6 @@
   </section>
 
   <script>
-    const nav = document.querySelector('nav');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 40) {
-        nav.style.transform = 'translateY(-100%)';
-      } else {
-        nav.style.transform = 'translateY(0)';
-      }
-    }, { passive: true });
   </script>
 
   <!-- Footer -->
