@@ -84,7 +84,7 @@
 
     /* ─── Hero ─────────────────────────────────────────────────── */
     #hero {
-      min-height: 100svh;
+      min-height: calc(var(--vh, 1vh) * 100);
       display: flex; align-items: center;
       padding: 80px 0 80px;
     }
@@ -537,6 +537,7 @@
   </section>
 
   <script>
+    document.documentElement.style.setProperty('--vh', window.innerHeight * 0.01 + 'px');
   </script>
 
   <!-- Footer -->
