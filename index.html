@@ -545,15 +545,12 @@
 
   <script>
     const nav = document.querySelector('nav');
-    let lastY = 0;
     window.addEventListener('scroll', () => {
-      const y = window.scrollY;
-      if (y > lastY && y > 80) {
+      if (window.scrollY > 40) {
         nav.style.transform = 'translateY(-100%)';
       } else {
         nav.style.transform = 'translateY(0)';
       }
-      lastY = y;
     }, { passive: true });
   </script>
 
