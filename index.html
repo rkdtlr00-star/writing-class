@@ -130,8 +130,37 @@
     .hero-info-item strong { display: block; color: var(--text); font-weight: 500; margin-bottom: 2px; }
 
     /* ─── About ─────────────────────────────────────────────────── */
+    .about-layout {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .about-photo-wrap {
+      position: sticky;
+      top: 100px;
+    }
+    .about-photo {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      filter: grayscale(8%);
+    }
+    .about-photo-caption {
+      margin-top: 12px;
+      font-size: 11px;
+      letter-spacing: .08em;
+      color: var(--muted);
+      text-align: center;
+    }
     .about-text { max-width: 600px; }
     .career-list { margin-top: 48px; }
+    @media (max-width: 600px) {
+      .about-layout { grid-template-columns: 1fr; gap: 32px; }
+      .about-photo-wrap { position: static; max-width: 160px; }
+    }
     .career-item {
       display: flex; align-items: baseline; gap: 16px;
       padding: 16px 0;
@@ -314,35 +343,47 @@
     <div class="container">
       <span class="label">선생님 소개</span>
       <h2>카피라이터가<br />글쓰기를 가르치는 이유</h2>
-      <div class="about-text">
-        <p>
-          국어국문학과를 나와 카피라이터로 일하고 있는 제가,
-          어릴 적 글쓰기를 그다지 좋아하지 않았다면 믿어지시나요?
-          빈 공책은 학교 운동장보다도 드넓어 보였습니다.
-        </p>
-        <p>
-          이 수업은 어린 시절의 저를 떠올리며 기획했어요.
-          글쓰기가 학습 스킬을 넘어, 나를 나답게 표현하고
-          성장시킬 든든한 힘이 된다는 것을 함께 발견하는 시간입니다.
-        </p>
-      </div>
 
-      <div class="career-list">
-        <div class="career-item">
-          <span class="career-tag">학력</span>
-          <span class="career-content">이화여자대학교 국어국문학과 졸업</span>
+      <div class="about-layout">
+        <!-- 프로필 사진 -->
+        <div class="about-photo-wrap">
+          <img class="about-photo" src="profile.jpg" alt="선생님 프로필 사진" />
+          <p class="about-photo-caption">이화여대 국어국문학과<br />카피라이터</p>
         </div>
-        <div class="career-item">
-          <span class="career-tag">전</span>
-          <span class="career-content">커머스 플랫폼 콘텐츠 에디터</span>
-        </div>
-        <div class="career-item">
-          <span class="career-tag">전</span>
-          <span class="career-content">하나은행 콘텐츠 카피라이터</span>
-        </div>
-        <div class="career-item">
-          <span class="career-tag">현</span>
-          <span class="career-content">카피라이터 &amp; 초등 글쓰기 과외</span>
+
+        <!-- 텍스트 + 약력 -->
+        <div>
+          <div class="about-text">
+            <p>
+              국어국문학과를 나와 카피라이터로 일하고 있는 제가,
+              어릴 적 글쓰기를 그다지 좋아하지 않았다면 믿어지시나요?
+              빈 공책은 학교 운동장보다도 드넓어 보였습니다.
+            </p>
+            <p>
+              이 수업은 어린 시절의 저를 떠올리며 기획했어요.
+              글쓰기가 학습 스킬을 넘어, 나를 나답게 표현하고
+              성장시킬 든든한 힘이 된다는 것을 함께 발견하는 시간입니다.
+            </p>
+          </div>
+
+          <div class="career-list">
+            <div class="career-item">
+              <span class="career-tag">학력</span>
+              <span class="career-content">이화여자대학교 국어국문학과 졸업</span>
+            </div>
+            <div class="career-item">
+              <span class="career-tag">전</span>
+              <span class="career-content">커머스 플랫폼 콘텐츠 에디터</span>
+            </div>
+            <div class="career-item">
+              <span class="career-tag">전</span>
+              <span class="career-content">하나은행 콘텐츠 카피라이터</span>
+            </div>
+            <div class="career-item">
+              <span class="career-tag">현</span>
+              <span class="career-content">카피라이터 &amp; 초등 글쓰기 과외</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
